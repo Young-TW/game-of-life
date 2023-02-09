@@ -20,7 +20,7 @@ class Board{
 };
 
 Board::Board(){
-    resize(30);
+    resize(40);
     fill(false);
 }
 
