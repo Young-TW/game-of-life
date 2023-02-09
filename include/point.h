@@ -1,3 +1,6 @@
+#ifndef POINT_H
+#define POINT_H
+
 class Point{
     public:
         Point();
@@ -25,3 +28,5 @@ void Point::set(bool status){
 bool Point::get(){
     return this->alive;
 }
+
+#endif

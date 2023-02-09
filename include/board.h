@@ -1,3 +1,6 @@
+#ifndef BOARD_H
+#define BOARD_H
+
 #include <vector>
 
 #include "point.h"
@@ -20,7 +23,7 @@ class Board{
 };
 
 Board::Board(){
-    resize(40);
+    resize(50);
     fill(false);
 }
 
@@ -122,3 +125,4 @@ void Board::next(){
     return;
 }
 
+#endif
