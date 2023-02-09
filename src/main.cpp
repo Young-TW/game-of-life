@@ -1,8 +1,18 @@
 #include <iostream>
-#include <windows.h>
+#include <thread>
+#include <chrono>
 
 #include "board.h"
 #include "item.h"
+
+void clear(){
+    #ifdef __GNUC__
+    system("clear");
+    #elif defined _MSC_VER
+    system("cls");
+    #endif
+    return;
+}
 
 int main(){
     Board board;
@@ -12,8 +22,8 @@ int main(){
     while(1){
         board.print();
         board.next();
-        Sleep(10);
-        system("CLS");
+        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+        clear();
     }
 
     return 0;
