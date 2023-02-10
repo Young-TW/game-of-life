@@ -60,21 +60,19 @@ void Board::print(){
         for(int x=0;x<size;x++){
             status = get(x, y);
             if(status){
-                std::cout << "M";
+                std::cout << "██";
             }else{
-                std::cout << ".";
+                std::cout << "  ";
             }
         }
         std::cout << "\n";
     }
-    std::cout << "\n\n";
     return;
 }
 
 void Board::resize(int size){
     this->size = size;
-    std::vector<Point> temp(size);
-    board.resize(size, temp);
+    board.resize(size, std::vector<Point>(size));
     return;
 }
 
@@ -85,15 +83,15 @@ bool Board::calculate(int x, int y){
 
     int count = 0;
 
-    count += get(x-1, y-1);
-    count += get(x-1, y);
-    count += get(x-1, y+1);
-    count += get(x, y-1);
-    count += get(x, y+1);
-    count += get(x+1, y-1);
-    count += get(x+1, y);
-    count += get(x+1, y+1);
+    // maintain displacement
+    std::vector<int> mx = {1, 1, 1, 0, 0, -1, -1, -1};
+    std::vector<int> my = {1, 0, -1, 1, -1, 1, 0, -1};
 
+    for (int i=0 ; i<8 ; i++){
+        count += get(x+mx[i], y+my[i]);
+    }
+
+    // check cell is alive or dead
     if(get(x, y) == true){
         if(count == 2 || count == 3){
             return 1;
