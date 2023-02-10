@@ -33,13 +33,13 @@ Board item::gosper(Board board, int x, int y){
     board.set(x+21, y+3, true);
     board.set(x+34, y+3, true);
     board.set(x+35, y+3, true);
-    board.set(x+0, y+4, true);
+    board.set(x, y+4, true);
     board.set(x+1, y+4, true);
     board.set(x+10, y+4, true);
     board.set(x+16, y+4, true);
     board.set(x+20, y+4, true);
     board.set(x+21, y+4, true);
-    board.set(x+0, y+5, true);
+    board.set(x, y+5, true);
     board.set(x+1, y+5, true);
     board.set(x+10, y+5, true);
     board.set(x+14, y+5, true);

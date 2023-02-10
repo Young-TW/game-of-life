@@ -1,18 +1,9 @@
-#include <iostream>
 #include <thread>
 #include <chrono>
 
 #include "board.h"
 #include "item.h"
-
-void clear(){
-    #ifdef __GNUC__
-    system("clear");
-    #elif defined _MSC_VER
-    system("cls");
-    #endif
-    return;
-}
+#include "clear.h"
 
 int main(){
     Board board;
