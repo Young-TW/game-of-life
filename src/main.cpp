@@ -1,16 +1,16 @@
-#include <thread>
 #include <chrono>
+#include <thread>
 
 #include "board.h"
-#include "item.h"
 #include "clear.h"
+#include "item.h"
 
-int main(){
+int main() {
     Board board;
 
-    board = item::gosper(board, 2,4);
+    board = item::gosper(board, 2, 4);
 
-    while(1){
+    while (1) {
         board.print();
         board.next();
         std::this_thread::sleep_for(std::chrono::milliseconds(50));
