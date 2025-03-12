@@ -2,14 +2,13 @@
 #define DRAW_H
 
 #include "GLFW/glfw3.h"
-
 #include "board.h"
 #include "item.h"
 
-void print_cell(float x, float y){
+void print_cell(float x, float y) {
     // scale ratio, [0~49] -> [-1, 1]
-    x = x/25-1;
-    y = y/25-1;
+    x = x / 25 - 1;
+    y = y / 25 - 1;
 
     // len = 2 / board size
     float len = 0.04;
@@ -17,21 +16,21 @@ void print_cell(float x, float y){
     // print square
     glBegin(GL_QUADS);
     glVertex2f(x, y);
-    glVertex2f(x+len, y);
-    glVertex2f(x+len, y+len);
-    glVertex2f(x, y+len);
+    glVertex2f(x + len, y);
+    glVertex2f(x + len, y + len);
+    glVertex2f(x, y + len);
     glEnd();
     return;
 }
 
-void print(Board board){
+void print(Board board) {
     bool status;
 
     // traverse board
-    for (int y=0;y<board.get_size();y++){
-        for (int x=0;x<board.get_size();x++){
+    for (int y = 0; y < board.get_size(); y++) {
+        for (int x = 0; x < board.get_size(); x++) {
             status = board.get(x, y);
-            if(status){
+            if (status) {
                 print_cell(x, y);
             }
         }

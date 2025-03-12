@@ -1,18 +1,18 @@
-#include <thread>
 #include <chrono>
+#include <thread>
 
 #include "board.h"
-#include "item.h"
 #include "clear.h"
 #include "draw.h"
+#include "item.h"
 
-int main(){
+int main() {
     // init
     Board board;
-    board = item::gosper(board, 2,4);
+    board = item::gosper(board, 2, 4);
 
     glfwInit();
-    GLFWwindow* window = glfwCreateWindow(500, 500, "uwu", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(500, 500, "game-of-life", NULL, NULL);
     glfwMakeContextCurrent(window);
 
     while (!glfwWindowShouldClose(window)) {
