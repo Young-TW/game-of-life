@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0.0)
+cmake_minimum_required(VERSION 3.20.0)
 project(game-of-life VERSION 0.0.0)
 
 # include(CTest)
