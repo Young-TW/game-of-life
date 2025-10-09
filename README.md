@@ -2,6 +2,8 @@
 
 A C++ implementation of Conway's Game of Life.
 
+![CI/CD](https://github.com/Young-TW/game-of-life/actions/workflows/cmake.yml/badge.svg)
+
 ## Usage
 
 ### Build from source
